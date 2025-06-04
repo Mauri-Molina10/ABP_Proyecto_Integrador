@@ -6,13 +6,20 @@ Este proyecto es parte del ABP (Aprendizaje Basado en Proyectos) y consiste en c
 
 ---
 
+## Demo online
+
+Podés ver y probar la aplicación funcionando en este enlace:  
+👉 [https://abp-proyecto-integrador.vercel.app/](https://abp-proyecto-integrador.vercel.app/)
+
+---
+
 ## Funcionalidades principales
 
 - **Listado de productos**: muestra tarjetas con imagen, nombre, precio y descripción.
 - **Búsqueda**: filtra productos por nombre en tiempo real.
 - **Filtrado por categoría**: permite ver productos de una categoría específica.
 - **Paginación**: muestra los productos de a 9 por página y permite navegar entre páginas.
-- **Ordenamiento**: se puede ordenar por precio o rating, ascendente o descendente.
+- **Ordenamiento**: se puede ordenar por nombre (A-Z, Z-A), precio o rating, ascendente o descendente.
 - **Modo oscuro/claro**: cambia el tema visual de la app.
 - **Exportar datos**: permite descargar los productos filtrados en formato JSON, CSV o Excel.
 - **Estadísticas numéricas**: muestra datos como total de productos, precio promedio, producto más caro/barato, etc.
@@ -45,6 +52,19 @@ Este proyecto es parte del ABP (Aprendizaje Basado en Proyectos) y consiste en c
 
 ---
 
+## Recursos recomendados y documentación utilizada
+
+Para el desarrollo de este proyecto utilicé la siguiente documentación y recursos oficiales:
+
+- [React Docs](https://react.dev/)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Axios](https://axios-http.com/docs/intro)
+- [DummyJSON API](https://dummyjson.com/docs)
+- [Recharts](https://recharts.org/en-US/)
+- [Convert JSON to CSV](https://www.convertcsv.com/json-to-csv.htm)
+
+---
+
 ## Notas personales
 
 - El código está dividido en componentes para que sea fácil de leer y modificar.
@@ -52,5 +72,15 @@ Este proyecto es parte del ABP (Aprendizaje Basado en Proyectos) y consiste en c
 - El modo oscuro funciona agregando o quitando la clase `dark` en el contenedor principal.
 - Los gráficos y tooltips están optimizados para que sean claros y útiles.
 - La paginación se reinicia automáticamente al cambiar de categoría para evitar páginas vacías.
+
+---
+
+## Autor
+
+| ![Foto de perfil](https://avatars.githubusercontent.com/u/153015666?s=100) |
+|:--:|
+| **Mauri Molina** |
+| Estudiante ISPC - Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial |
+| [GitHub](https://github.com/Mauri-Molina10) |
 
 ---

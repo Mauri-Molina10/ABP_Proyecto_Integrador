@@ -11,7 +11,8 @@ function App() {
     const [darkMode, setDarkMode] = useState(false);
     const [page, setPage] = useState(1);
     const [format, setFormat] = useState("json");
-    const [orderBy, setOrderBy] = useState("none");
+    // Orden por defecto: rating descendente (los mejor calificados primero)
+    const [orderBy, setOrderBy] = useState("rating-desc");
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [exportMsg, setExportMsg] = useState(null);
@@ -63,6 +64,10 @@ function App() {
         orderedProducts.sort((a, b) => a.rating - b.rating);
     } else if (orderBy === "rating-desc") {
         orderedProducts.sort((a, b) => b.rating - a.rating);
+    } else if (orderBy === "alpha-asc") {
+        orderedProducts.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (orderBy === "alpha-desc") {
+        orderedProducts.sort((a, b) => b.title.localeCompare(a.title));
     }
 
     // Calculo el rango de productos a mostrar según la página
@@ -260,12 +265,14 @@ function App() {
                             <option key={cat.value} value={cat.value}>{cat.label}</option>
                         ))}
                 </select>
+                {/* Nuevo ordenamiento: alfabético, precio y rating */}
                 <select
                     value={orderBy}
                     onChange={(e) => setOrderBy(e.target.value)}
                     className="px-4 py-2 rounded-lg border-2 border-purple-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                 >
-                    <option value="none">Sin orden</option>
+                    <option value="alpha-asc">Alfabético A-Z</option>
+                    <option value="alpha-desc">Alfabético Z-A</option>
                     <option value="price-asc">Precio ascendente</option>
                     <option value="price-desc">Precio descendente</option>
                     <option value="rating-asc">Rating ascendente</option>
