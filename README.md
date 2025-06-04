@@ -76,8 +76,7 @@ Para el desarrollo de este proyecto utilicé la siguiente documentación y recur
 ---
 
 ## Autor
-
-|![Foto de perfil](https://github.com/user-attachments/assets/b7edd7e4-e8e6-4527-bc1f-b55720c95597)
+![Foto de perfil](https://github.com/user-attachments/assets/5eee55bb-aabf-4459-b12b-eae48f880dc2)
 
 |:--:|
 | **Mauri Molina** |
