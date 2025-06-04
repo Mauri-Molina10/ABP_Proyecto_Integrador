@@ -1,83 +1,56 @@
-<<<<<<< HEAD
-# React + Vite
+# Proyecto Integrador ABP: Procesamiento de datos con APIS REST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ¿De qué trata este proyecto?
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Proyecto Integrador - Estadísticas de Productos con React y Tailwind
-
-## ¿Qué hace la aplicación?
-
-Esta aplicación muestra una lista de productos obtenidos desde una API y calcula varias estadísticas sobre esos productos. Además, permite buscar productos por nombre y alternar la visualización de las estadísticas.
+Este proyecto es parte del ABP (Aprendizaje Basado en Proyectos) y consiste en consumir una API REST de productos, mostrar los datos en una interfaz moderna y calcular estadísticas útiles. Permite buscar, filtrar, ordenar, exportar y visualizar información de productos de manera interactiva.
 
 ---
 
-## Estadísticas agregadas
+## Funcionalidades principales
 
-Las estadísticas que se muestran en el panel son:
-
-- **Productos totales:** cantidad de productos filtrados por búsqueda.
-- **Producto más caro:** nombre y precio del producto con el precio más alto.
-- **Producto más barato:** nombre y precio del producto con el precio más bajo.
-- **Productos con título > 20 caracteres:** cuántos productos tienen un título largo.
-- **Precio total:** suma de los precios de todos los productos filtrados.
-- **Promedio de descuento:** promedio del porcentaje de descuento de los productos.
-- **Productos con stock bajo (< 50):** cuántos productos tienen menos de 50 unidades en stock.
-- **Producto con mayor descuento:** nombre y porcentaje de descuento del producto con mayor descuento.
-- **Promedio de precio:** precio promedio de los productos filtrados.
-
----
-
-## División del código en componentes
-
-El código está dividido en varios componentes para que sea más fácil de mantener y entender:
-
-- **App.jsx:**  
-  Es el componente principal. Se encarga de:
-  - Obtener los productos desde la API.
-  - Manejar el estado de búsqueda, el estado para mostrar/ocultar estadísticas y el estado del modo oscuro.
-  - Calcular todas las estadísticas.
-  - Renderizar el buscador, el botón de modo oscuro, la lista de productos y el panel de estadísticas.
-
-- **ProductList.jsx:**  
-  Este componente recibe la lista de productos filtrados y los muestra en una grilla.  
-  Cada producto se muestra en una tarjeta con su nombre y precio.
-
-- **StatsPanel.jsx:**  
-  Este componente recibe todas las estadísticas calculadas desde `App.jsx` y las muestra en un panel con estilos.
+- **Listado de productos**: muestra tarjetas con imagen, nombre, precio y descripción.
+- **Búsqueda**: filtra productos por nombre en tiempo real.
+- **Filtrado por categoría**: permite ver productos de una categoría específica.
+- **Paginación**: muestra los productos de a 9 por página y permite navegar entre páginas.
+- **Ordenamiento**: se puede ordenar por precio o rating, ascendente o descendente.
+- **Modo oscuro/claro**: cambia el tema visual de la app.
+- **Exportar datos**: permite descargar los productos filtrados en formato JSON, CSV o Excel.
+- **Estadísticas numéricas**: muestra datos como total de productos, precio promedio, producto más caro/barato, etc.
+- **Estadísticas visuales**: incluye gráficos de barras, líneas y torta para visualizar stock, precios y categorías.
+- **Gráficos interactivos**: los gráficos muestran tooltips claros y leyendas centradas.
+- **Responsive**: la app se adapta a cualquier tamaño de pantalla.
 
 ---
 
-## Otros archivos importantes
+## ¿Cómo está organizado el código?
 
-- **index.css:**  
-  Aquí se importa Tailwind CSS y se configura la variante `dark` para que funcione el modo oscuro usando la clase `.dark` en el elemento `<html>`.
+- **App.jsx**:  
+  Componente principal. Maneja el estado global, obtiene los datos de la API, filtra, ordena, pagina y calcula estadísticas. También controla el modo oscuro y la exportación de datos.
 
-- **main.jsx:**  
-  Es el punto de entrada de la aplicación. Renderiza el componente `App` dentro del elemento con id `root`.
+- **ProductList.jsx**:  
+  Muestra los productos en tarjetas. Las imágenes se ven completas y centradas. Cada tarjeta tiene nombre, precio y descripción.
 
-- **index.html:**  
-  Es el archivo HTML base donde se monta la aplicación de React.
+- **StatsPanel.jsx**:  
+  Recibe los datos estadísticos y los muestra en formato numérico y gráfico. Los gráficos usan Recharts y están optimizados para que las etiquetas y leyendas sean legibles y estén bien ubicadas.
 
-- **tailwind.config.js:**  
-  Archivo de configuración de Tailwind. Se especifica que el modo oscuro se activa con la clase `dark` y se indican los archivos donde Tailwind debe buscar las clases usadas.
+---
+
+## ¿Cómo usar la app?
+
+1. Cloná el repositorio y ejecutá `npm install`.
+2. Corré `npm run dev` para ver la app en tu navegador.
+3. Buscá, filtrá, ordená y explorá los productos.
+4. Exportá los datos en el formato que quieras.
+5. Alterná entre modo claro y oscuro según prefieras.
 
 ---
 
 ## Notas personales
 
-- El código está dividido en componentes para que sea más fácil de leer y modificar.
-- Las estadísticas se calculan en el componente principal y se pasan como props al panel de estadísticas.
-- El modo oscuro funciona agregando o quitando la clase `dark` en `<html>`, siguiendo la documentación oficial de Tailwind https://tailwindcss.com/docs/dark-mode.
-- El botón de modo oscuro alterna entre los dos modos y guarda la preferencia en el navegador.
+- El código está dividido en componentes para que sea fácil de leer y modificar.
+- Las estadísticas se calculan en el componente principal y se pasan como props.
+- El modo oscuro funciona agregando o quitando la clase `dark` en el contenedor principal.
+- Los gráficos y tooltips están optimizados para que sean claros y útiles.
+- La paginación se reinicia automáticamente al cambiar de categoría para evitar páginas vacías.
 
 ---
->>>>>>> ad5a77b106ea457e26bf38b557795d36cbd7c560
