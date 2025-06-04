@@ -77,7 +77,8 @@ Para el desarrollo de este proyecto utilicé la siguiente documentación y recur
 
 ## Autor
 
-| ![Foto de perfil](https://avatars.githubusercontent.com/u/153015666?s=100) |
+|![Foto de perfil](https://github.com/user-attachments/assets/b7edd7e4-e8e6-4527-bc1f-b55720c95597)
+
 |:--:|
 | **Mauri Molina** |
 | Estudiante ISPC - Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial |
